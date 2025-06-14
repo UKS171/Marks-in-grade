@@ -1,2 +1,38 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dom</title>
+  </head>
+  <body>
+  <h1 id="marks">Marks</h1>
+    <button onclick="checkMarks()">Enter Marks</button>
+    <p id="result"></p>
+    <script>
+    function checkMarks() {
+        let marks = prompt("Enter your marks (0-100):");
+        // Convert to number
+        marks = Number(marks);
+        let grade = "";
+        if (marks >= 0 && marks < 50) {
+          grade = "F Grade";
+        } else if (marks >= 50 && marks < 60) {
+          grade = "D Grade";
+        } else if (marks >= 60 && marks < 70) {
+          grade = "B Grade";
+        } else if (marks >= 70 && marks < 80) {
+          grade = "B+ Grade";
+        } else if (marks >= 80 && marks < 90) {
+          grade = "A Grade";
+        } else if (marks >= 90 && marks <= 100) {
+          grade = "A+ Grade";
+        } else {
+          grade = "Invalid Entry";
+        }
+        // Output result on page
+        document.getElementById("result").innerText = `You have got ${grade}`;
+      }
+    </script>
+  </body>
+</html>
